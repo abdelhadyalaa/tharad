@@ -29,7 +29,7 @@ class AppButton extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
           gradient: const LinearGradient(
-            colors: [Color(0xff5CC7A3), Color(0xff265355)], // Gradient ثابت
+            colors: [Color(0xff5CC7A3), Color(0xff265355)],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
           ),
@@ -40,13 +40,13 @@ class AppButton extends StatelessWidget {
             children: [
               if (icon != null) ...[
                 AppImage(image: icon!, height: 20, width: 20),
-                const SizedBox(width: 8), // مسافة بين الأيقونة والنص
+                const SizedBox(width: 8),
               ],
               Text(
                 text,
                 style: const TextStyle(
-                  color: Colors.white, // نص أبيض
-                  fontWeight: FontWeight.bold, // نص جريء
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],

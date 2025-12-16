@@ -45,8 +45,8 @@ class _AppResendOtpState extends State<AppResendOtp> {
               ),
               TextButton(
                 style: TextButton.styleFrom(
-                  padding: EdgeInsets.zero, // إزالة أي Padding افتراضي
-                  minimumSize: Size(0, 0), // يقلل حجم الزرار الافتراضي
+                  padding: EdgeInsets.zero,
+                  minimumSize: Size(0, 0),
                   tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                 ),
                 onPressed: isCodeSent
