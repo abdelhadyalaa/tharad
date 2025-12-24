@@ -11,7 +11,6 @@ class AppVerifyCode extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.ltr,
       child: PinCodeTextField(
-
         appContext: context,
         cursorHeight: 16.h,
         cursorWidth: 5.w,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppButtonUnderline extends StatelessWidget {
-  final String? text;
+  final String text;
   final VoidCallback? onPressed;
   final bool isLogout;
 
@@ -17,7 +17,7 @@ class AppButtonUnderline extends StatelessWidget {
 
       ),
       child: Text(
-        text!,
+        text,
         style: TextStyle(
           color: isLogout?Colors.red:Color(0xff42867B),
           decoration: TextDecoration.underline,

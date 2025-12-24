@@ -6,8 +6,10 @@ import 'app_image.dart';
 class AppInput extends StatefulWidget {
   final String? suffixIcon;
   final Color? vColor;
+  final TextInputType? keyboardType;
+
   final String hint, label;
-  final bool withCountryCode, isPassword;
+  final bool withCountryCode, isPassword,isNumber;
   final double? bottomSpace;
 
   const AppInput({
@@ -19,6 +21,7 @@ class AppInput extends StatefulWidget {
     this.isPassword = false,
     this.bottomSpace,
     this.vColor,
+    this.keyboardType,  this.isNumber=false ,
   });
 
   @override
@@ -36,11 +39,18 @@ class _AppInputState extends State<AppInput> {
         children: [
           Expanded(
             child: TextFormField(
+              keyboardType: widget.isNumber ? TextInputType.number : (widget.keyboardType ?? TextInputType.text),              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return widget.isPassword
+                      ? "Please Put Your Password"
+                      : 'Please Put Your Data';
+                }
+                return null;
+              },
               obscureText: widget.isPassword && isHidden,
               decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.grey.shade100,
-                // لون الخلفية
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(5),
                   borderSide: BorderSide(color: Colors.black),

@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tharad/views/auth/otp.dart';
 import 'package:tharad/views/auth/register.dart';
-import 'package:tharad/views/profile.dart';
 
 import 'core/logic/helper_methods.dart';
 
@@ -41,12 +39,18 @@ class MyApp extends StatelessWidget {
           ),
           scaffoldBackgroundColor: Color(0xffFFFFFF),
         ),
-        home: ProfileView(),
+        home: RegisterView(),
         navigatorKey: navKey,
         builder: (context, child) {
-          return Directionality(
-            textDirection: TextDirection.rtl,
-            child: child!,
+          return GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              FocusManager.instance.primaryFocus?.unfocus();
+            },
+            child: Directionality(
+              textDirection: TextDirection.rtl,
+              child: child!,
+            ),
           );
         },
       ),
